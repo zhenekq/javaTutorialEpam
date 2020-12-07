@@ -14,7 +14,7 @@ public class Main {
         for(int i=0;i<squareLength;i++){
             for(int j=0;j<squareLength;j++){
                 if(i==j)
-                    System.out.print(array[i][j] +" ");
+                    System.out.print(array[i][j] +" "); 
             }
         }
 
