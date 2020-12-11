@@ -7,26 +7,22 @@ public class Main {
         int col = sc.nextInt();
         int array[][] = new int[row][col];
 
-
         for(int i=0;i<row;i++){
             for(int j=0;j<col;j++){
                 array[i][j] = sc.nextInt();
             }
         }
-        System.out.println("Enter the columns to swap: ");
-        int swapColFirst = sc.nextInt();
-        int swapColSecond = sc.nextInt();
-
+        int maxOfSumColumn = Integer.MIN_VALUE;
         for(int i=0;i<row;i++){
-            int tmp = array[i][swapColFirst];
-            array[i][swapColFirst] = array[i][swapColSecond];
-            array[i][swapColSecond] = tmp;
-        }
-        for(int i=0;i<row;i++){
+            int sumOfColumn = 0;
             for(int j=0;j<col;j++){
-                System.out.print(array[i][j] + " ");
+                sumOfColumn+=array[j][i];
             }
-            System.out.println();
+            System.out.println("Column "+(i+1)+" sum = " + sumOfColumn + " ");
+            if(sumOfColumn>maxOfSumColumn){
+                maxOfSumColumn = sumOfColumn;
+            }
         }
+        System.out.println("\nMax sum of columns is: "+maxOfSumColumn);
     }
 }
